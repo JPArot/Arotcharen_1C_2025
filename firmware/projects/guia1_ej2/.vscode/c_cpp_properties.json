@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "ESP-IDF",
+            "compilerPath": "$HOME/.espressif/tools/...",
+            "includePath": [
+                "${config:idf.espIdfPath}/components/**",
+                "${config:idf.espIdfPathWin}/components/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../../drivers/microcontroller/**",
+                "${workspaceFolder}/../../drivers/devices/**"
+            ],
+            "browse": {
+                "path": [
+                    "${config:idf.espIdfPath}/components",
+                    "${config:idf.espIdfPathWin}/components",
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}/../../drivers/microcontroller/**",
+                    "${workspaceFolder}/../../drivers/devices/**"
+                ],
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}
