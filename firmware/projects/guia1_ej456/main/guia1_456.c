@@ -161,7 +161,7 @@ gpioConf_t gpioMap[3] = {
 /*==================[external functions definition]==========================*/
 void app_main(void)
 {
-    uint32_t numero = 123;
+    uint32_t numero = 752;
     uint8_t digits = 3;
     uint8_t bcd_number[digits];
 
