@@ -10,7 +10,15 @@
  *
  * |    Peripheral  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * | 	D1   	 	| 	GPIO_20 	|
+ * | 	D2  	 	| 	GPIO_21		|
+ * | 	D3  	 	| 	GPIO_22		|
+ * | 	D4  	 	| 	GPIO_23		|
+ * | 	SEL_1	 	| 	GPIO_19		|
+ * | 	SEL_2	 	| 	GPIO_18		|
+ * | 	SEL_3	 	| 	GPIO_9		|
+ * | 	+5V 	 	| 	+5V	    	|
+ * | 	GND 	 	| 	GND 		|
  *
  *
  * @section changelog Changelog
