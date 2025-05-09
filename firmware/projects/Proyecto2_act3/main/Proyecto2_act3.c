@@ -24,19 +24,6 @@
  */
 
 /*==================[inclusions]=============================================*/
-/**
- * @file main.c
- * @brief Proyecto: Medidor de distancia por ultrasonido con interrupciones.
- * 
- * Este proyecto utiliza un sensor HC-SR04, una pantalla LCD ITSE0803 y 3 LEDs para mostrar la distancia medida.
- * Utiliza interrupciones para el control de teclas y timers para el control de medición y visualización.
- * 
- * - SWITCH_1 (TEC1): Inicia/detiene la medición.
- * - SWITCH_2 (TEC2): Mantiene la última medición (HOLD).
- * - REFRESCO_MED: Timer que dispara medición cada 1s.
- * - REFRESCO_LCD: Timer que actualiza LCD y LEDs cada 100ms.
- */
-
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -48,6 +35,8 @@
 #include "lcditse0803.h"
 #include "hc_sr04.h"
 #include "timer_mcu.h"
+#include "uart_mcu.h"
+#include "delay_mcu.h"
 
 /*==================[Macros]=================================================*/
 /** @brief Periodo de medición en microsegundos */
@@ -57,12 +46,13 @@
 #define REFRESCO_LCD 100000
 
 /*==================[Variables globales]=====================================*/
-bool start = false;       /**< Flag que indica si la medición está activa */
-bool hold = false;        /**< Flag para mantener la última medición */
-int distancia = 0;        /**< Variable global para almacenar la distancia medida */
+static bool start = false;       /**< Flag que indica si la medición está activa */
+static bool hold = false;        /**< Flag para mantener la última medición */
+static int distancia = 0;        /**< Variable global para almacenar la distancia medida */
 
 TaskHandle_t Medir_task_handle = NULL;     /**< Manejador de la tarea de medición */
 TaskHandle_t Mostrar_task_handle = NULL;   /**< Manejador de la tarea de visualización */
+TaskHandle_t uart_task_handle = NULL; 
 
 /*==================[Tareas]=================================================*/
 
@@ -81,6 +71,7 @@ static void TareaMedir(void *pvParameter)
         if (start)
         {
             distancia = HcSr04ReadDistanceInCentimeters();
+            UartSendString(UART_PC, "Aguante Boca!\n");
         }
     }
 }
@@ -102,6 +93,7 @@ static void TareaMostrar(void *pvParameter)
             if (!hold)
             {
                 LcdItsE0803Write(distancia);
+
             }
 
             if (distancia < 10)
@@ -225,6 +217,18 @@ void app_main(void)
     // Inicio de timers
     TimerStart(timer_medir.timer);
     TimerStart(timer_mostrar.timer);
+
+
+    serial_config_t my_uart={
+        .port=UART_PC,
+        .baud_rate=9600,
+        .func_p= NULL,
+        .param_p= NULL
+
+    };
+    UartInit(&my_uart);
+
+    
 }
 
 /*==================[end of file]============================================*/

@@ -49,7 +49,7 @@
 #include "lcditse0803.h"
 
 #define PERIODO_MEDICION_MS   1000
-#define PERIODO_TECLAS_MS     1000
+#define PERIODO_TECLAS_MS     100
 
 static bool medicion_activa = false;
 static bool hold_activo = false;

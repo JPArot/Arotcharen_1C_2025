@@ -29,6 +29,12 @@
         },
         {
             "path": "projects/Proyecto 2"
+        },
+        {
+            "path": "projects/Poyecto2_act2"
+        },
+        {
+            "path": "projects/Proyecto2_act3"
         }
     ],
     "settings": {
@@ -84,7 +90,8 @@
             "soc_caps.h": "c",
             "mpu6050.h": "c",
             "i2c_mcu.h": "c",
-            "cstdint": "c"
+            "cstdint": "c",
+            "stdio.h": "c"
         },
     },
     "tasks": {
