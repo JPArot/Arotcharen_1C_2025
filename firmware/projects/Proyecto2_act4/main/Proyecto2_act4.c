@@ -41,8 +41,8 @@
 #include <hc_sr04.h>
 #include "delay_mcu.h"
 
-#define FRECUENCIA_MUESTREO_HZ 500                        // Frecuencia de muestreo: 500 Hz
-#define TIEMPO_MUESTREO_US     (1000000 / FRECUENCIA_MUESTREO_HZ) // Periodo en microsegundos: 2 ms
+#define FRECUENCIA_MUESTREO_HZ 50                        // Frecuencia de muestreo: 50 Hz
+#define TIEMPO_MUESTREO_US     (1000000 / FRECUENCIA_MUESTREO_HZ) // Periodo en microsegundos: 20 ms
 
 /*==================[global variables]====================================*/
 
@@ -86,7 +86,7 @@ void app_main(void) {
     // Inicialización del UART para transmitir a la PC (Serial Plotter)
     serial_config_t uart_config = {
         .port = UART_PC,
-        .baud_rate = 9600,
+        .baud_rate = 115000,
         .func_p = NULL,
         .param_p = NULL
     };
