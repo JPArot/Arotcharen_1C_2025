@@ -24,7 +24,6 @@
  */
 
 /**
- * @file main.c
  * @brief Firmware para longboard eléctrico (ESP32-C6 + ESP-EDU)
  *
  * Funcionalidades:
@@ -313,41 +312,51 @@ void tarea_comandos(void *param) {
 
 
 /**
- * @brief Tarea periódica que monitorea el estado de batería y velocidad,
- *        y envía esa información a través de BLE cada 1 segundo.
- * - Lee el voltaje de la batería y calcula el porcentaje.
- * - Si la batería cae por debajo del 10%, frena el motor automáticamente.
- * - Calcula la velocidad usando los pulsos del sensor óptico.
- * - Envía velocidad y batería por BLE en formato "VEL :x.xx; BAT :yy".
+ * @brief Tarea periodica que monitorea la bateria, velocidad y envia datos por BLE
+ *
+ * Esta tarea corre constantemente cada 1 segundo
+ * - Verifica si la conexión Bluetooth está activa
+ *     - Si está desconectado, frena automáticamente el motor y simula estado de batería baja.
+ * - Lee el voltaje de la batería con el ADC.
+ *     - Si es menor al 10%, frena el motor automáticamente.
+ * - Calcula la velocidad usando el sensor óptico.
+ * - Envía la velocidad y batería como string vía BLE si está conectado.
  */
 void tarea_monitoreo(void *param) {
     while (1) {
-        // Lee el voltaje de batería desde el ADC y lo convierte a porcentaje
-        float volt = leerVoltajeBateria();             
-        float pct = volt * 100 / 4.2f;                 
 
-        // Si la batería está por debajo del umbral y aún no está marcada como baja
-        if (pct < BAT_LOW_PERCENT && !bateria_baja) {
-            frenar();                                 // Se frena automáticamente
-            bateria_baja = true;                      // Se activa la bandera de batería baja
-        } else if (pct >= BAT_LOW_PERCENT) {
-            bateria_baja = false;                     // Se desactiva si el nivel se recupera
+        // 1. Verifica si BLE está conectado
+        if (BleStatus() != BLE_CONNECTED) {
+            frenar();             // Frena por seguridad
+            bateria_baja = true;  // Simula condición de protección
+            vTaskDelay(pdMS_TO_TICKS(1000));  // Espera antes de volver a chequear
+            continue;             // No ejecuta el resto del loop
         }
 
-        // Calcula la velocidad actual en metros por segundo
-        float vel = calcularVelocidad();              
+        // 2. Lectura y verificación de batería
+        float volt = leerVoltajeBateria();          // Lee voltaje en V
+        float pct  = volt * 100 / 4.2f;              // Convierte a porcentaje (considerando 4.2V como 100%)
 
-        // Prepara el mensaje de salida en formato "VEL:2.35;BAT:88"
+        if (pct < BAT_LOW_PERCENT && !bateria_baja) {
+            frenar();              // Frena el motor si la batería está baja
+            bateria_baja = true;  // Marca estado de protección activa
+        } else if (pct >= BAT_LOW_PERCENT) {
+            bateria_baja = false; // Se recuperó
+        }
+
+        // 3. Calcula velocidad
+        float vel = calcularVelocidad();  // En m/s
+
+        // 4. Envía datos por BLE como string
         char msg[32];
         snprintf(msg, sizeof(msg), "VEL:%.2f;BAT:%.0f", vel, pct);
+        BleSendString(msg);  // Notificación BLE
 
-        // Envía los datos por BLE usando la función definida en ble_mcu
-        BleSendString(msg);
-
-        // Espera 1 segundo antes de repetir
+        // 5. Espera 1 segundo antes del próximo ciclo
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+
 
 
 void app_main(void) {
