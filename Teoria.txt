@@ -1,0 +1,2 @@
+1)a-I2C la tranferencia de datos se hacen de a 8 bits
+
