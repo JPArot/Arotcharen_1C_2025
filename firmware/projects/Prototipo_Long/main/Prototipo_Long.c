@@ -93,14 +93,23 @@ static int64_t last_touch_time = 0;
  */
 void read_data(uint8_t *data, uint8_t length)
 {
-    int64_t now = esp_timer_get_time();
-
-    if (data[0] == 'A') {
-        mantener_velocidad = true;
-    } else if (data[0] == 'F') {
-        cmd_frenar = true;
+    //  Protección para punteros nulos o mensajes vacíos
+    if (data == NULL || length == 0)
+     return;
+    
+    switch (data[0]) {
+        case 'A':
+            mantener_velocidad = true;
+            break;
+        case 'F':
+            cmd_frenar = true;
+            break;
+        default:
+            
+            break;
     }
 }
+
 
 /**
  * @brief ISR del sensor óptico.
@@ -109,9 +118,12 @@ void read_data(uint8_t *data, uint8_t length)
  */
 void IRAM_ATTR sensor_isr(void *arg) {
     uint32_t now = TimerRead(TIMER_A);
-    pulse_interval_us = now - last_pulse_time;
-    last_pulse_time = now;
+    if (now > last_pulse_time) {
+        pulse_interval_us = now - last_pulse_time;
+        last_pulse_time = now;
+    }
 }
+
 
 /**
  * @brief Inicializa el pin del sensor óptico y su interrupción.
