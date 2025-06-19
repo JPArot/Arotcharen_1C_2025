@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prototipo longboard electrico: Referencia del archivo C:/Users/jeanp/OneDrive/Desktop/Arotcharen_1C_2025/firmware/drivers/microcontroller/src/dht11.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prototipo longboard electrico<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('src_2dht11_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo dht11.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Driver for reading humiduty and temperature with DHT11.  
+<a href="#details">Más...</a></p>
+
+<p><a href="src_2dht11_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a220d5994d3f07a9ea58a5982c2ddb5fa" id="r_a220d5994d3f07a9ea58a5982c2ddb5fa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5fa">dht11_state_e</a> { <br />
+&#160;&#160;<a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faa17337c7ead2124d7216e417eb202b653">dht11_state_start</a>
+, <a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faa9e89d609e5caca35d2264557cec84233">dht11_state_low</a>
+, <a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faabb9c2c979e174405447081cb43a7dfb5">dht11_state_high</a>
+, <a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faacc41318c7ee401c3c765f352e3b958ad">dht11_state_timeout</a>
+, <br />
+&#160;&#160;<a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faabd4118e985b1044af43b25295b44d2b8">dht11_state_error</a>
+, <a class="el" href="#a220d5994d3f07a9ea58a5982c2ddb5faa955dcef6e8b8f19dd0702a51f9397cf5">dht11_state_end</a>
+<br />
+ }</td></tr>
+<tr class="separator:a220d5994d3f07a9ea58a5982c2ddb5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a36c427162ae0359637684ee7536a8448" id="r_a36c427162ae0359637684ee7536a8448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36c427162ae0359637684ee7536a8448">dht11Init</a> (<a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> gpio)</td></tr>
+<tr class="memdesc:a36c427162ae0359637684ee7536a8448"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHT11 initialization.  <br /></td></tr>
+<tr class="separator:a36c427162ae0359637684ee7536a8448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d3abb714df048a98a6224efa83a2a8" id="r_a37d3abb714df048a98a6224efa83a2a8"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37d3abb714df048a98a6224efa83a2a8">dht11Read</a> (float *phum, float *ptemp)</td></tr>
+<tr class="memdesc:a37d3abb714df048a98a6224efa83a2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature and humidity.  <br /></td></tr>
+<tr class="separator:a37d3abb714df048a98a6224efa83a2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a741dfd360b4ab8f9c418f9f3842a8cb7" id="r_a741dfd360b4ab8f9c418f9f3842a8cb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a741dfd360b4ab8f9c418f9f3842a8cb7">dht11Pin</a></td></tr>
+<tr class="separator:a741dfd360b4ab8f9c418f9f3842a8cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7886fb64301c92264d100b7708d0ae0c" id="r_a7886fb64301c92264d100b7708d0ae0c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7886fb64301c92264d100b7708d0ae0c">dht11_timeout</a></td></tr>
+<tr class="separator:a7886fb64301c92264d100b7708d0ae0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b7490064f9cf02ab59cab3cecb8b13" id="r_aa2b7490064f9cf02ab59cab3cecb8b13"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2b7490064f9cf02ab59cab3cecb8b13">dht11_timeout_max</a></td></tr>
+<tr class="separator:aa2b7490064f9cf02ab59cab3cecb8b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Driver for reading humiduty and temperature with DHT11. </p>
+<p>/** </p>
+<dl class="section note"><dt>Nota</dt><dd>Temperature range: 0 / +50°C ±2°C</dd>
+<dd>
+Humidity range: 20-90RH ±5RH</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Juani Cerrudo</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Hardware connections:</dd></dl>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">DHT11   </th><th class="markdownTableHeadLeft">ESP-EDU    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">VCC   </td><td class="markdownTableBodyLeft">3V3    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">DATA   </td><td class="markdownTableBodyLeft">GPIO_#    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">GND   </td><td class="markdownTableBodyLeft">GND   </td></tr>
+</table>
+<h1><a class="anchor" id="changelog"></a>
+Historial de cambios</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Date   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20/05/2025   </td><td class="markdownTableBodyLeft">Document creation   </td></tr>
+</table>
+
+<p class="definition">Definición en el archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+</div><h2 class="groupheader">Documentación de enumeraciones</h2>
+<a id="a220d5994d3f07a9ea58a5982c2ddb5fa" name="a220d5994d3f07a9ea58a5982c2ddb5fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220d5994d3f07a9ea58a5982c2ddb5fa">&#9670;&#160;</a></span>dht11_state_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="inc_2dht11_8c.html#a220d5994d3f07a9ea58a5982c2ddb5fa">dht11_state_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faa17337c7ead2124d7216e417eb202b653" name="a220d5994d3f07a9ea58a5982c2ddb5faa17337c7ead2124d7216e417eb202b653"></a>dht11_state_start&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faa9e89d609e5caca35d2264557cec84233" name="a220d5994d3f07a9ea58a5982c2ddb5faa9e89d609e5caca35d2264557cec84233"></a>dht11_state_low&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faabb9c2c979e174405447081cb43a7dfb5" name="a220d5994d3f07a9ea58a5982c2ddb5faabb9c2c979e174405447081cb43a7dfb5"></a>dht11_state_high&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faacc41318c7ee401c3c765f352e3b958ad" name="a220d5994d3f07a9ea58a5982c2ddb5faacc41318c7ee401c3c765f352e3b958ad"></a>dht11_state_timeout&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faabd4118e985b1044af43b25295b44d2b8" name="a220d5994d3f07a9ea58a5982c2ddb5faabd4118e985b1044af43b25295b44d2b8"></a>dht11_state_error&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a220d5994d3f07a9ea58a5982c2ddb5faa955dcef6e8b8f19dd0702a51f9397cf5" name="a220d5994d3f07a9ea58a5982c2ddb5faa955dcef6e8b8f19dd0702a51f9397cf5"></a>dht11_state_end&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00041">41</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a36c427162ae0359637684ee7536a8448" name="a36c427162ae0359637684ee7536a8448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c427162ae0359637684ee7536a8448">&#9670;&#160;</a></span>dht11Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dht11Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a></td>          <td class="paramname"><span class="paramname"><em>gpio</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DHT11 initialization. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpio</td><td>GPIO number for data pin </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nothing </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00227">227</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="inc_2dht11_8c_source.html#l00039">dht11Pin</a>.</p>
+
+</div>
+</div>
+<a id="a37d3abb714df048a98a6224efa83a2a8" name="a37d3abb714df048a98a6224efa83a2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d3abb714df048a98a6224efa83a2a8">&#9670;&#160;</a></span>dht11Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_Bool dht11Read </td>
+          <td>(</td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>phum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>ptemp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read temperature and humidity. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">phum</td><td>pointer to store humidity value </td></tr>
+    <tr><td class="paramname">ptemp</td><td>pointer to store temperature value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true if read was successful, false otherwise </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00232">232</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a7886fb64301c92264d100b7708d0ae0c" name="a7886fb64301c92264d100b7708d0ae0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7886fb64301c92264d100b7708d0ae0c">&#9670;&#160;</a></span>dht11_timeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t dht11_timeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00065">65</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+</div>
+</div>
+<a id="aa2b7490064f9cf02ab59cab3cecb8b13" name="aa2b7490064f9cf02ab59cab3cecb8b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b7490064f9cf02ab59cab3cecb8b13">&#9670;&#160;</a></span>dht11_timeout_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t dht11_timeout_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00066">66</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+</div>
+</div>
+<a id="a741dfd360b4ab8f9c418f9f3842a8cb7" name="a741dfd360b4ab8f9c418f9f3842a8cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741dfd360b4ab8f9c418f9f3842a8cb7">&#9670;&#160;</a></span>dht11Pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> dht11Pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="src_2dht11_8c_source.html#l00039">39</a> del archivo <a class="el" href="src_2dht11_8c_source.html">dht11.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a class="el" href="dir_d160f35dc52f3817b5a745af8a8d0f15.html">microcontroller</a></li><li class="navelem"><a class="el" href="dir_38cdc4999cf52a062657331cc3e157fe.html">src</a></li><li class="navelem"><a class="el" href="src_2dht11_8c.html">dht11.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

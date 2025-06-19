@@ -1,51 +1,41 @@
-/*! @mainpage Template
+/*! @mainpage Longboard Eléctrico con ESP32-C6 + ESP-EDU
  *
- * @section genDesc General Description
+ * @section genDesc Descripción General
  *
- * This section describes how the program works.
+ * Este firmware permite controlar un longboard eléctrico utilizando un ESP32-C6.
+ * Las funcionalidades implementadas incluyen:
  *
- * <a href="https://drive.google.com/...">Operation Example</a>
+ * - Control de motor por PWM (mediante L293D)
+ * - Lectura de velocidad usando sensor óptico (TCRT5000)
+ * - Medición del voltaje de batería mediante ADC
+ * - Comunicación BLE para recepción de comandos y envío de estado
+ * - Control por comandos: avanzar, frenar, mantener velocidad
+ * - Indicadores LED para depuración visual
  *
- * @section hardConn Hardware Connection
+ * <b>Comandos disponibles vía BLE:</b>
+ * - `'A'` → avanzar/mantener velocidad
+ * - `'F'` → frenar
  *
- * |    Peripheral  |   ESP32       |
- * |:--------------:|:--------------|
- * |    PIN_X       |   GPIO_X      |
+ * @section hardConn Conexión de Hardware
  *
+ * |    Componente         |   ESP32-C6 (ESP-EDU) GPIO |
+ * |:---------------------:|:-------------------------:|
+ * | Sensor óptico (TCRT5000) salida digital | GPIO_6 (SENSOR_GPIO)     |
+ * | Motor (a través de L293D)               | GPIO conectados vía driver L293 |
+ * | Lectura de batería (ADC)                | CH0 (canal ADC 0)        |
+ * | LED 1 (actividad BLE)                   | LED_1                    |
+ * | LED 2 (comando 'A')                     | LED_2                    |
+ * | LED 3 (mantener velocidad)              | LED_3                    |
  *
- * @section changelog Changelog
+ * @section changelog Historial de cambios
  *
- * |   Date     | Description                                    |
- * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation                              |
+ * |   Fecha     | Descripción                                     |
+ * |:-----------:|:-----------------------------------------------|
+ * | 12/09/2023  | Creación del documento base                    |
+ * | 17/06/2025  | Integración BLE, sensor óptico y control motor |
  *
  * @author Jean Pierre Arotcharen (jean.arotcharen@ingenieria.uner.edu.ar)
  *
- */
-
-/**
- * @brief Firmware para longboard eléctrico (ESP32-C6 + ESP-EDU)
- *
- * Funcionalidades:
- * - Control de motor por PWM con driver PWM_MCU
- * - Lectura de sensor óptico para medir velocidad
- * - Lectura de batería por ADC
- * - Comunicación BLE usando BleInit y read_data
- * - Modo mantener velocidad con doble toque (por el momento cancelado)
- * - Aceleración progresiva con presión sostenida(por el momento cancelado)
- * - Frenado automático si batería < 10%
- */
-/**
- * @brief Firmware para longboard eléctrico (ESP32-C6 + ESP-EDU)
- *
- * Funcionalidades:
- * - Control de motor por PWM con driver PWM_MCU
- * - Lectura de sensor óptico para medir velocidad
- * - Lectura de batería por ADC
- * - Comunicación BLE usando BleInit y read_data
- * - Modo mantener velocidad con doble toque
- * - Aceleración progresiva con presión sostenida
- * - Frenado automático si batería < 10%
  */
 
 #include <stdio.h>
@@ -62,7 +52,7 @@
 #include "gpio_mcu.h"
 #include "analog_io_mcu.h"
 #include "timer_mcu.h"
-#include "l293.h" // ✅ Driver oficial para el control del L293D
+#include "l293.h" 
 
 // === Definiciones generales ===
 #define SENSOR_GPIO GPIO_6        /*!< GPIO del sensor óptico */
@@ -71,6 +61,7 @@
 #define WHEEL_RADIUS 0.03f        /*!< Radio de la rueda en metros */
 #define BAT_DIV_FACTOR 2.0f       /*!< Factor de división resistiva */
 #define BAT_LOW_PERCENT 10.0f     /*!< Umbral de batería baja (en %) */
+
 
 // === Variables de estado ===
 static int duty_cycle = 0;
@@ -84,6 +75,8 @@ static uint32_t pulse_interval_us = 0;
 static uint32_t last_pulse_time = 0;
 static int64_t last_touch_time = 0;
 
+#include "led.h" //Para control
+
 /**
  * @brief Callback llamado al recibir un comando BLE.
  * 
@@ -93,12 +86,18 @@ static int64_t last_touch_time = 0;
  */
 void read_data(uint8_t *data, uint8_t length)
 {
+    //Prendo los LED para indicar actividad
+      LedOn(LED_1);
     //  Protección para punteros nulos o mensajes vacíos
     if (data == NULL || length == 0)
-     return;
+    return;
+               
+   
     
     switch (data[0]) {
         case 'A':
+        //Prendo Led para ver que funciona
+        LedOn(LED_2);
             mantener_velocidad = true;
             break;
         case 'F':
@@ -176,14 +175,14 @@ float calcularVelocidad() {
  */
 void frenar(void) {
     for (int i = duty_cycle; i >= 0; i -= 10) {
-        L293SetSpeed(MOTOR_1, i);
+        L293SetSpeed(MOTOR_2, i);
         vTaskDelay(pdMS_TO_TICKS(50));
     }
 
     duty_cycle = 0;
-    mantener_presionado = false;
+   
     mantener_velocidad = false;
-    L293SetSpeed(MOTOR_1, 0);
+    L293SetSpeed(MOTOR_2, 0);
 }
 
 /**
@@ -196,11 +195,13 @@ void tarea_comandos(void *param) {
             cmd_frenar = false;
         }
 
-        if (mantener_presionado && !bateria_baja) {
+        if (mantener_velocidad) {
+            LedOn(LED_3); //Prendo LED rojo para indicar que se mantiene velocidad
+            mantener_velocidad=false;
             if (duty_cycle < 255) {
                 duty_cycle += 10;
                 if (duty_cycle > 255) duty_cycle = 255;
-                L293SetSpeed(MOTOR_1, duty_cycle * 100 / 255);
+                L293SetSpeed(MOTOR_2, duty_cycle*100/255 );
             }
         }
 
@@ -217,7 +218,7 @@ void tarea_monitoreo(void *param) {
 
     while (1) {
         if (BleStatus() != BLE_CONNECTED) {
-            frenar();
+            //frenar();
             bateria_baja = true;
             vTaskDelay(pdMS_TO_TICKS(1000));
             continue;
@@ -226,7 +227,7 @@ void tarea_monitoreo(void *param) {
         float voltaje_bat = leerVoltajeBateria();
         if (voltaje_bat < 6.6f) {
             bateria_baja = true;
-            frenar();
+            //frenar(); 
         } else {
             bateria_baja = false;
         }
@@ -238,6 +239,9 @@ void tarea_monitoreo(void *param) {
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+void funcionTimer(){
+
+}
 
 /**
  * @brief Función principal del firmware.
@@ -248,12 +252,12 @@ void app_main(void) {
     timer_config_t timer_config = {
         .timer = TIMER_A,
         .period = 1000000,
-        .func_p = NULL,
+        .func_p = funcionTimer,
         .param_p = NULL
     };
     TimerInit(&timer_config);
     TimerStart(TIMER_A);
-
+    LedsInit();
     L293Init();       
     init_sensor();
     init_adc();
