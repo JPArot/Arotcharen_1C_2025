@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prototipo longboard electrico: Archivo de código fuente C:/Users/jeanp/OneDrive/Desktop/Arotcharen_1C_2025/firmware/projects/Recuperatorio/main/Recuperatorio.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prototipo longboard electrico<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_recuperatorio_8c_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Recuperatorio.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_recuperatorio_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="gpio__mcu_8h.html">gpio_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="uart__mcu_8h.html">uart_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;<a class="code" href="delay__mcu_8h.html">delay_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;<a class="code" href="analog__io__mcu_8h.html">analog_io_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;<a class="code" href="hc__sr04_8h.html">hc_sr04.h</a>&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">   47</a></span><span class="preprocessor">#define ELECTROVALVULA GPIO_3</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">   48</a></span><span class="preprocessor">#define MOTOR_COMIDA   GPIO_5</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a0078f76c435094bc330021e7b51dc280">   49</a></span><span class="preprocessor">#define TRIG_GPIO      GPIO_7</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a77de7e037e6cdffdd291044a2c0b19b7">   50</a></span><span class="preprocessor">#define ECHO_GPIO      GPIO_8</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a380e8a765c730e9ba32df5a7e38025d3">   51</a></span><span class="preprocessor">#define TECLA_AGUA     GPIO_9</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">   52</a></span><span class="preprocessor">#define TECLA_COMIDA   GPIO_10</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">   53</a></span><span class="preprocessor">#define UART_CONSOLA   UART_PC</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//Hago unas banderas de control para saber si el agua y la comida estan habilitadas</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">static</span> <span class="keywordtype">bool</span> agua_habilitada = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">static</span> <span class="keywordtype">bool</span> comida_habilitada = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">   59</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a> = 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">   60</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a> = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a8836d366b0c4eeed81a37911341a8f2e">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a8836d366b0c4eeed81a37911341a8f2e">InitHardware</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a380e8a765c730e9ba32df5a7e38025d3">TECLA_AGUA</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa1ea38ffc304a6c32480a65b5fec7302">GPIO_INPUT</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">TECLA_COMIDA</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa1ea38ffc304a6c32480a65b5fec7302">GPIO_INPUT</a>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a0078f76c435094bc330021e7b51dc280">TRIG_GPIO</a>, <a class="code hl_define" href="_recuperatorio_8c.html#a77de7e037e6cdffdd291044a2c0b19b7">ECHO_GPIO</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> adc_cfg = {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        .input = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a>,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        .mode = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        .sample_frec = 0</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    };</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;adc_cfg);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_struct" href="structserial__config__t.html">serial_config_t</a> uart_cfg = {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        .port = <a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        .baud_rate = 115200,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    };</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a>(&amp;uart_cfg);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a11931433664b3fdcb82f694fab669630">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a11931433664b3fdcb82f694fab669630">TareaTeclas</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> estado_agua = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">bool</span> estado_comida = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//controlo el agua</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="group___g_i_o_p.html#gab42a477acc6064150000fb4a1bd4305c">GPIORead</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a380e8a765c730e9ba32df5a7e38025d3">TECLA_AGUA</a>) &amp;&amp; estado_agua) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            agua_habilitada = !agua_habilitada;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, agua_habilitada ? <span class="stringliteral">&quot;[AGUA ACTIVADA]\r\n&quot;</span> : <span class="stringliteral">&quot;[AGUA DESACTIVADA]\r\n&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            estado_agua = <span class="keyword">false</span>; <span class="comment">// cambio el estado de la bandera</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="group___g_i_o_p.html#gab42a477acc6064150000fb4a1bd4305c">GPIORead</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a380e8a765c730e9ba32df5a7e38025d3">TECLA_AGUA</a>)) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            estado_agua = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">//uso la misma logica para la comida</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="group___g_i_o_p.html#gab42a477acc6064150000fb4a1bd4305c">GPIORead</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">TECLA_COMIDA</a>) &amp;&amp; estado_comida) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            comida_habilitada = !comida_habilitada;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, comida_habilitada ? <span class="stringliteral">&quot;[COMIDA ACTIVADA]\r\n&quot;</span> : <span class="stringliteral">&quot;[COMIDA DESACTIVADA]\r\n&quot;</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            estado_comida = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="group___g_i_o_p.html#gab42a477acc6064150000fb4a1bd4305c">GPIORead</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">TECLA_COMIDA</a>)) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            estado_comida = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        vTaskDelay(pdMS_TO_TICKS(100));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a5e228da1da7e206fcb40acaf5f548ad9">  135</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a5e228da1da7e206fcb40acaf5f548ad9">TareaAgua</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">float</span> distancia_cm;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">if</span> (agua_habilitada) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">if</span> (HcSr04ReadDistance(&amp;distancia_cm)) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <a class="code hl_variable" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a> = (30.0 - distancia_cm) * 100; </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a> &lt; 500) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a> &gt;= 2500) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        vTaskDelay(pdMS_TO_TICKS(2000));</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a02888458efc488c4b537a6d5fba24691">  161</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a02888458efc488c4b537a6d5fba24691">TareaComida</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    uint16_t raw;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">if</span> (comida_habilitada) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a>, &amp;raw);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordtype">float</span> volt = (raw / 4095.0f) * 3.3f;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <a class="code hl_variable" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a> = ((volt - 0.5f) / 2.8f) * 500.0f; <span class="comment">// (3.3-0.5)=2.8 (que seria la variacion de voltaje maximo y minimo)</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      <span class="comment">//si la comida es menor a 25g, activo el motor de comida</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a> &lt; 25) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="comment">//si la comida es mayor a 250g, desactivo el motor de comida</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a> &gt;= 250) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a>);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        vTaskDelay(pdMS_TO_TICKS(5000));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#af1ec7a0e6a63b968952924be51018713">  187</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#af1ec7a0e6a63b968952924be51018713">TareaUART</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">char</span> comando;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="group___u_a_r_t.html#ga37f1b16880c3ca70ed2e543566d555d2">UartReadByte</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, (uint8_t *)&amp;comando)) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">if</span> (comando == <span class="charliteral">&#39;w&#39;</span>) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                agua_habilitada = !agua_habilitada;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, agua_habilitada ? <span class="stringliteral">&quot;[AGUA ACTIVADA]\r\n&quot;</span> : <span class="stringliteral">&quot;[AGUA DESACTIVADA]\r\n&quot;</span>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> (comando == <span class="charliteral">&#39;f&#39;</span>) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                comida_habilitada = !comida_habilitada;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, comida_habilitada ? <span class="stringliteral">&quot;[COMIDA ACTIVADA]\r\n&quot;</span> : <span class="stringliteral">&quot;[COMIDA DESACTIVADA]\r\n&quot;</span>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        vTaskDelay(pdMS_TO_TICKS(100));</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a1865ce9d96db5969d78a3c992fde97e9">  208</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a1865ce9d96db5969d78a3c992fde97e9">TareaInforme</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordtype">char</span> mensaje[100];</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        snprintf(mensaje, <span class="keyword">sizeof</span>(mensaje), <span class="stringliteral">&quot;Teo tiene %.0f g de alimento y %.0f ml de agua\r\n&quot;</span>, <a class="code hl_variable" href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a>, <a class="code hl_variable" href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, mensaje);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        vTaskDelay(pdMS_TO_TICKS(1000));</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="_recuperatorio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  217</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_recuperatorio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="_recuperatorio_8c.html#a8836d366b0c4eeed81a37911341a8f2e">InitHardware</a>();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_define" href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>, <span class="stringliteral">&quot;\r\n[SISTEMA INICIADO]\r\nComandos UART: &#39;w&#39;=agua, &#39;f&#39;=comida\r\n&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    xTaskCreate(&amp;<a class="code hl_function" href="_recuperatorio_8c.html#a11931433664b3fdcb82f694fab669630">TareaTeclas</a>, <span class="stringliteral">&quot;Teclas&quot;</span>, 4096, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    xTaskCreate(&amp;<a class="code hl_function" href="_recuperatorio_8c.html#a5e228da1da7e206fcb40acaf5f548ad9">TareaAgua</a>, <span class="stringliteral">&quot;Agua&quot;</span>, 4096, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    xTaskCreate(&amp;<a class="code hl_function" href="_recuperatorio_8c.html#a02888458efc488c4b537a6d5fba24691">TareaComida</a>, <span class="stringliteral">&quot;Comida&quot;</span>, 4096, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    xTaskCreate(&amp;<a class="code hl_function" href="_recuperatorio_8c.html#af1ec7a0e6a63b968952924be51018713">TareaUART</a>, <span class="stringliteral">&quot;UART&quot;</span>, 4096, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 2, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    xTaskCreate(&amp;<a class="code hl_function" href="_recuperatorio_8c.html#a1865ce9d96db5969d78a3c992fde97e9">TareaInforme</a>, <span class="stringliteral">&quot;Informe&quot;</span>, 4096, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 1, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="ttc" id="a_recuperatorio_8c_html_a0078f76c435094bc330021e7b51dc280"><div class="ttname"><a href="_recuperatorio_8c.html#a0078f76c435094bc330021e7b51dc280">TRIG_GPIO</a></div><div class="ttdeci">#define TRIG_GPIO</div><div class="ttdef"><b>Definition</b> <a href="#l00049">Recuperatorio.c:49</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a02888458efc488c4b537a6d5fba24691"><div class="ttname"><a href="_recuperatorio_8c.html#a02888458efc488c4b537a6d5fba24691">TareaComida</a></div><div class="ttdeci">void TareaComida(void *param)</div><div class="ttdoc">Tarea que controla el suministro de coimida. Usa un ADC para leer el valor de la balanza analógica Ca...</div><div class="ttdef"><b>Definition</b> <a href="#l00161">Recuperatorio.c:161</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a11931433664b3fdcb82f694fab669630"><div class="ttname"><a href="_recuperatorio_8c.html#a11931433664b3fdcb82f694fab669630">TareaTeclas</a></div><div class="ttdeci">void TareaTeclas(void *param)</div><div class="ttdoc">tarea que monitorea las teclas de agua y comida. Detecta el estado de las teclas y activa/desactiva e...</div><div class="ttdef"><b>Definition</b> <a href="#l00101">Recuperatorio.c:101</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a1865ce9d96db5969d78a3c992fde97e9"><div class="ttname"><a href="_recuperatorio_8c.html#a1865ce9d96db5969d78a3c992fde97e9">TareaInforme</a></div><div class="ttdeci">void TareaInforme(void *param)</div><div class="ttdoc">Tarea que envía informes periódicos por UART. Envía cada 10 segundos un mensaje con la cantidad de co...</div><div class="ttdef"><b>Definition</b> <a href="#l00208">Recuperatorio.c:208</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a380e8a765c730e9ba32df5a7e38025d3"><div class="ttname"><a href="_recuperatorio_8c.html#a380e8a765c730e9ba32df5a7e38025d3">TECLA_AGUA</a></div><div class="ttdeci">#define TECLA_AGUA</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Recuperatorio.c:51</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a48ab154cd74e54007ff2a13d4dda883c"><div class="ttname"><a href="_recuperatorio_8c.html#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a></div><div class="ttdeci">float comida_g</div><div class="ttdef"><b>Definition</b> <a href="#l00060">Recuperatorio.c:60</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a59ec60e79a284699220cb80feb615f04"><div class="ttname"><a href="_recuperatorio_8c.html#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a></div><div class="ttdeci">#define ELECTROVALVULA</div><div class="ttdef"><b>Definition</b> <a href="#l00047">Recuperatorio.c:47</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a5e228da1da7e206fcb40acaf5f548ad9"><div class="ttname"><a href="_recuperatorio_8c.html#a5e228da1da7e206fcb40acaf5f548ad9">TareaAgua</a></div><div class="ttdeci">void TareaAgua(void *param)</div><div class="ttdoc">Tarea que controla el suministro de agua. Utiliza el sensor HC-SR04 para medir la distancia y calcula...</div><div class="ttdef"><b>Definition</b> <a href="#l00135">Recuperatorio.c:135</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="_recuperatorio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00217">Recuperatorio.c:217</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a71803fe4b3c986c47c3f994f6bc4cf37"><div class="ttname"><a href="_recuperatorio_8c.html#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a></div><div class="ttdeci">#define MOTOR_COMIDA</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Recuperatorio.c:48</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a77de7e037e6cdffdd291044a2c0b19b7"><div class="ttname"><a href="_recuperatorio_8c.html#a77de7e037e6cdffdd291044a2c0b19b7">ECHO_GPIO</a></div><div class="ttdeci">#define ECHO_GPIO</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Recuperatorio.c:50</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a77fbfec8b5e9ba5bb7d5d5a74c5e32a3"><div class="ttname"><a href="_recuperatorio_8c.html#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">TECLA_COMIDA</a></div><div class="ttdeci">#define TECLA_COMIDA</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Recuperatorio.c:52</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a8836d366b0c4eeed81a37911341a8f2e"><div class="ttname"><a href="_recuperatorio_8c.html#a8836d366b0c4eeed81a37911341a8f2e">InitHardware</a></div><div class="ttdeci">void InitHardware(void)</div><div class="ttdoc">Callback llamado al recibir un comando BLE.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">Recuperatorio.c:70</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_a8c842c361fe811e1a737a0e0aa35836a"><div class="ttname"><a href="_recuperatorio_8c.html#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a></div><div class="ttdeci">#define UART_CONSOLA</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Recuperatorio.c:53</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_addef71ac804abb8dd4d55183a711f442"><div class="ttname"><a href="_recuperatorio_8c.html#addef71ac804abb8dd4d55183a711f442">agua_ml</a></div><div class="ttdeci">float agua_ml</div><div class="ttdef"><b>Definition</b> <a href="#l00059">Recuperatorio.c:59</a></div></div>
+<div class="ttc" id="a_recuperatorio_8c_html_af1ec7a0e6a63b968952924be51018713"><div class="ttname"><a href="_recuperatorio_8c.html#af1ec7a0e6a63b968952924be51018713">TareaUART</a></div><div class="ttdeci">void TareaUART(void *param)</div><div class="ttdoc">Tarea que maneja los comandos recibidos por UART. Permite activar/desactivar el suministro de agua y ...</div><div class="ttdef"><b>Definition</b> <a href="#l00187">Recuperatorio.c:187</a></div></div>
+<div class="ttc" id="aanalog__io__mcu_8h_html"><div class="ttname"><a href="analog__io__mcu_8h.html">analog_io_mcu.h</a></div></div>
+<div class="ttc" id="adelay__mcu_8h_html"><div class="ttname"><a href="delay__mcu_8h.html">delay_mcu.h</a></div></div>
+<div class="ttc" id="agpio__mcu_8h_html"><div class="ttname"><a href="gpio__mcu_8h.html">gpio_mcu.h</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_ga24ce5556aa4682468220b982f151cdfe"><div class="ttname"><a href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a></div><div class="ttdeci">void AnalogInputInit(analog_input_config_t *config)</div><div class="ttdoc">Analog input initialization.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00045">analog_io_mcu.c:45</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab5ae00a35744f407072230979e593fd9"><div class="ttname"><a href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a></div><div class="ttdeci">void AnalogInputReadSingle(adc_ch_t channel, uint16_t *value)</div><div class="ttdoc">Read single channel.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00130">analog_io_mcu.c:130</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a></div><div class="ttdeci">@ CH2</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00033">analog_io_mcu.h:33</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ga10240d283f64bd1b09fca664fda27964"><div class="ttname"><a href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a></div><div class="ttdeci">void GPIOInit(gpio_t pin, io_t io)</div><div class="ttdoc">GPIO initialization.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00067">gpio_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ga30ed9d97406129b9b6390154a7479d70"><div class="ttname"><a href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a></div><div class="ttdeci">void GPIOOff(gpio_t pin)</div><div class="ttdoc">Change GPIO state to low.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00086">gpio_mcu.c:86</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gab42a477acc6064150000fb4a1bd4305c"><div class="ttname"><a href="group___g_i_o_p.html#gab42a477acc6064150000fb4a1bd4305c">GPIORead</a></div><div class="ttdeci">bool GPIORead(gpio_t pin)</div><div class="ttdoc">Reads GPIO state.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00101">gpio_mcu.c:101</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gaba62250f2b0e73a98b6f35fb6078fdb1"><div class="ttname"><a href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a></div><div class="ttdeci">void GPIOOn(gpio_t pin)</div><div class="ttdoc">Change GPIO state to high.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00081">gpio_mcu.c:81</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gga423620ef7d69894833f70cfc395caaa9aa1ea38ffc304a6c32480a65b5fec7302"><div class="ttname"><a href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa1ea38ffc304a6c32480a65b5fec7302">GPIO_INPUT</a></div><div class="ttdeci">@ GPIO_INPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00043">gpio_mcu.h:43</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516"><div class="ttname"><a href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a></div><div class="ttdeci">@ GPIO_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00044">gpio_mcu.h:44</a></div></div>
+<div class="ttc" id="agroup___h_c___s_r04_html_ga9d26cc017fe45c607d08231ebffb46c4"><div class="ttname"><a href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a></div><div class="ttdeci">bool HcSr04Init(gpio_t echo, gpio_t trigger)</div><div class="ttdoc">Driver for reading distance with HC-SR04 module.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8c_source.html#l00034">hc_sr04.c:34</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga37f1b16880c3ca70ed2e543566d555d2"><div class="ttname"><a href="group___u_a_r_t.html#ga37f1b16880c3ca70ed2e543566d555d2">UartReadByte</a></div><div class="ttdeci">uint8_t UartReadByte(uart_mcu_port_t port, uint8_t *data)</div><div class="ttdoc">Read a single byte from serial port.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00142">uart_mcu.c:142</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga440f6a03dfd8b310f5fdf42c3bf20c42"><div class="ttname"><a href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a></div><div class="ttdeci">void UartInit(serial_config_t *port_config)</div><div class="ttdoc">Serial port initialization.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00107">uart_mcu.c:107</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga60db217694ea24ad75fcedda3336a3a8"><div class="ttname"><a href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a></div><div class="ttdeci">void UartSendString(uart_mcu_port_t port, const char *msg)</div><div class="ttdoc">Send a String trough serial port.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00193">uart_mcu.c:193</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html"><div class="ttname"><a href="hc__sr04_8h.html">hc_sr04.h</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00019">ili9341.c:19</a></div></div>
+<div class="ttc" id="astructanalog__input__config__t_html"><div class="ttname"><a href="structanalog__input__config__t.html">analog_input_config_t</a></div><div class="ttdoc">Analog inputs config structure.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00048">analog_io_mcu.h:48</a></div></div>
+<div class="ttc" id="astructserial__config__t_html"><div class="ttname"><a href="structserial__config__t.html">serial_config_t</a></div><div class="ttdoc">Serial port configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00038">uart_mcu.h:38</a></div></div>
+<div class="ttc" id="auart__mcu_8h_html"><div class="ttname"><a href="uart__mcu_8h.html">uart_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_1e2167199c30f33b07873bbcbfad901c.html">Recuperatorio</a></li><li class="navelem"><a class="el" href="dir_c6c7b58283b9a2f6f9cfab379b882fcb.html">main</a></li><li class="navelem"><a class="el" href="_recuperatorio_8c.html">Recuperatorio.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

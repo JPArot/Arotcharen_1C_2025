@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Prototipo longboard electrico: Referencia del archivo C:/Users/jeanp/OneDrive/Desktop/Arotcharen_1C_2025/firmware/projects/Recuperatorio/main/Recuperatorio.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Prototipo longboard electrico<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_recuperatorio_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Recuperatorio.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="delay__mcu_8h_source.html">delay_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+</div>
+<p><a href="_recuperatorio_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a59ec60e79a284699220cb80feb615f04" id="r_a59ec60e79a284699220cb80feb615f04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59ec60e79a284699220cb80feb615f04">ELECTROVALVULA</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></td></tr>
+<tr class="separator:a59ec60e79a284699220cb80feb615f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71803fe4b3c986c47c3f994f6bc4cf37" id="r_a71803fe4b3c986c47c3f994f6bc4cf37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71803fe4b3c986c47c3f994f6bc4cf37">MOTOR_COMIDA</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a6213ab680cde9fe00f518cfb26a30a6b">GPIO_5</a></td></tr>
+<tr class="separator:a71803fe4b3c986c47c3f994f6bc4cf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0078f76c435094bc330021e7b51dc280" id="r_a0078f76c435094bc330021e7b51dc280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0078f76c435094bc330021e7b51dc280">TRIG_GPIO</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a></td></tr>
+<tr class="separator:a0078f76c435094bc330021e7b51dc280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77de7e037e6cdffdd291044a2c0b19b7" id="r_a77de7e037e6cdffdd291044a2c0b19b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77de7e037e6cdffdd291044a2c0b19b7">ECHO_GPIO</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1633eaf3914293921cf5e102f5026106">GPIO_8</a></td></tr>
+<tr class="separator:a77de7e037e6cdffdd291044a2c0b19b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380e8a765c730e9ba32df5a7e38025d3" id="r_a380e8a765c730e9ba32df5a7e38025d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a380e8a765c730e9ba32df5a7e38025d3">TECLA_AGUA</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a8bdaec9182fb8ab2106d5c67f3eabd2d">GPIO_9</a></td></tr>
+<tr class="separator:a380e8a765c730e9ba32df5a7e38025d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fbfec8b5e9ba5bb7d5d5a74c5e32a3" id="r_a77fbfec8b5e9ba5bb7d5d5a74c5e32a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">TECLA_COMIDA</a>&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a3943e6071dec78b6bcf9586cf0de6dd3">GPIO_10</a></td></tr>
+<tr class="separator:a77fbfec8b5e9ba5bb7d5d5a74c5e32a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c842c361fe811e1a737a0e0aa35836a" id="r_a8c842c361fe811e1a737a0e0aa35836a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c842c361fe811e1a737a0e0aa35836a">UART_CONSOLA</a>&#160;&#160;&#160;<a class="el" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a></td></tr>
+<tr class="separator:a8c842c361fe811e1a737a0e0aa35836a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a8836d366b0c4eeed81a37911341a8f2e" id="r_a8836d366b0c4eeed81a37911341a8f2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8836d366b0c4eeed81a37911341a8f2e">InitHardware</a> (void)</td></tr>
+<tr class="memdesc:a8836d366b0c4eeed81a37911341a8f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback llamado al recibir un comando BLE.  <br /></td></tr>
+<tr class="separator:a8836d366b0c4eeed81a37911341a8f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11931433664b3fdcb82f694fab669630" id="r_a11931433664b3fdcb82f694fab669630"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11931433664b3fdcb82f694fab669630">TareaTeclas</a> (void *param)</td></tr>
+<tr class="memdesc:a11931433664b3fdcb82f694fab669630"><td class="mdescLeft">&#160;</td><td class="mdescRight">tarea que monitorea las teclas de agua y comida. Detecta el estado de las teclas y activa/desactiva el suministro de agua y comida. y envía mensajes por UART al usuario. utilizo las banderas de control agua_habilitada y comida_habilitada  <br /></td></tr>
+<tr class="separator:a11931433664b3fdcb82f694fab669630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e228da1da7e206fcb40acaf5f548ad9" id="r_a5e228da1da7e206fcb40acaf5f548ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e228da1da7e206fcb40acaf5f548ad9">TareaAgua</a> (void *param)</td></tr>
+<tr class="memdesc:a5e228da1da7e206fcb40acaf5f548ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que controla el suministro de agua. Utiliza el sensor HC-SR04 para medir la distancia y calcular el volumen de agua Si la distancia es menor a 30 cm activa la electrovalvula para suministrar agua. Si la distancia es mayor o igual a 25 cm desactiva la electrovalvula.  <br /></td></tr>
+<tr class="separator:a5e228da1da7e206fcb40acaf5f548ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02888458efc488c4b537a6d5fba24691" id="r_a02888458efc488c4b537a6d5fba24691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02888458efc488c4b537a6d5fba24691">TareaComida</a> (void *param)</td></tr>
+<tr class="memdesc:a02888458efc488c4b537a6d5fba24691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que controla el suministro de coimida. Usa un ADC para leer el valor de la balanza analógica Calcula el peso de la comida en gramos y activa/desactiva el motor de comida Si el peso es menor a 25g activa el motor de comida Si el peso es mayor o igual a 250g desactiva el motor de comida.  <br /></td></tr>
+<tr class="separator:a02888458efc488c4b537a6d5fba24691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ec7a0e6a63b968952924be51018713" id="r_af1ec7a0e6a63b968952924be51018713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1ec7a0e6a63b968952924be51018713">TareaUART</a> (void *param)</td></tr>
+<tr class="memdesc:af1ec7a0e6a63b968952924be51018713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que maneja los comandos recibidos por UART. Permite activar/desactivar el suministro de agua y comida mediante los comandos w y f.  <br /></td></tr>
+<tr class="separator:af1ec7a0e6a63b968952924be51018713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1865ce9d96db5969d78a3c992fde97e9" id="r_a1865ce9d96db5969d78a3c992fde97e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1865ce9d96db5969d78a3c992fde97e9">TareaInforme</a> (void *param)</td></tr>
+<tr class="memdesc:a1865ce9d96db5969d78a3c992fde97e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que envía informes periódicos por UART. Envía cada 10 segundos un mensaje con la cantidad de comida y agua disponible.  <br /></td></tr>
+<tr class="separator:a1865ce9d96db5969d78a3c992fde97e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:addef71ac804abb8dd4d55183a711f442" id="r_addef71ac804abb8dd4d55183a711f442"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addef71ac804abb8dd4d55183a711f442">agua_ml</a> = 0</td></tr>
+<tr class="separator:addef71ac804abb8dd4d55183a711f442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ab154cd74e54007ff2a13d4dda883c" id="r_a48ab154cd74e54007ff2a13d4dda883c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48ab154cd74e54007ff2a13d4dda883c">comida_g</a> = 0</td></tr>
+<tr class="separator:a48ab154cd74e54007ff2a13d4dda883c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a77de7e037e6cdffdd291044a2c0b19b7" name="a77de7e037e6cdffdd291044a2c0b19b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77de7e037e6cdffdd291044a2c0b19b7">&#9670;&#160;</a></span>ECHO_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECHO_GPIO&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1633eaf3914293921cf5e102f5026106">GPIO_8</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00050">50</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a>.</p>
+
+</div>
+</div>
+<a id="a59ec60e79a284699220cb80feb615f04" name="a59ec60e79a284699220cb80feb615f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ec60e79a284699220cb80feb615f04">&#9670;&#160;</a></span>ELECTROVALVULA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELECTROVALVULA&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00047">47</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00135">TareaAgua()</a>.</p>
+
+</div>
+</div>
+<a id="a71803fe4b3c986c47c3f994f6bc4cf37" name="a71803fe4b3c986c47c3f994f6bc4cf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71803fe4b3c986c47c3f994f6bc4cf37">&#9670;&#160;</a></span>MOTOR_COMIDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOTOR_COMIDA&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a6213ab680cde9fe00f518cfb26a30a6b">GPIO_5</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00048">48</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00161">TareaComida()</a>.</p>
+
+</div>
+</div>
+<a id="a380e8a765c730e9ba32df5a7e38025d3" name="a380e8a765c730e9ba32df5a7e38025d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380e8a765c730e9ba32df5a7e38025d3">&#9670;&#160;</a></span>TECLA_AGUA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TECLA_AGUA&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a8bdaec9182fb8ab2106d5c67f3eabd2d">GPIO_9</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00051">51</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00101">TareaTeclas()</a>.</p>
+
+</div>
+</div>
+<a id="a77fbfec8b5e9ba5bb7d5d5a74c5e32a3" name="a77fbfec8b5e9ba5bb7d5d5a74c5e32a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77fbfec8b5e9ba5bb7d5d5a74c5e32a3">&#9670;&#160;</a></span>TECLA_COMIDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TECLA_COMIDA&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a3943e6071dec78b6bcf9586cf0de6dd3">GPIO_10</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00052">52</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00101">TareaTeclas()</a>.</p>
+
+</div>
+</div>
+<a id="a0078f76c435094bc330021e7b51dc280" name="a0078f76c435094bc330021e7b51dc280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0078f76c435094bc330021e7b51dc280">&#9670;&#160;</a></span>TRIG_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRIG_GPIO&#160;&#160;&#160;<a class="el" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00049">49</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a>.</p>
+
+</div>
+</div>
+<a id="a8c842c361fe811e1a737a0e0aa35836a" name="a8c842c361fe811e1a737a0e0aa35836a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c842c361fe811e1a737a0e0aa35836a">&#9670;&#160;</a></span>UART_CONSOLA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_CONSOLA&#160;&#160;&#160;<a class="el" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00053">53</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00208">TareaInforme()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00101">TareaTeclas()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00187">TareaUART()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00217">217</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_recuperatorio_8c_source.html#l00070">InitHardware()</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_recuperatorio_8c_source.html#l00135">TareaAgua()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00161">TareaComida()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00208">TareaInforme()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00101">TareaTeclas()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00187">TareaUART()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00053">UART_CONSOLA</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+</div>
+</div>
+<a id="a8836d366b0c4eeed81a37911341a8f2e" name="a8836d366b0c4eeed81a37911341a8f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8836d366b0c4eeed81a37911341a8f2e">&#9670;&#160;</a></span>InitHardware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitHardware </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback llamado al recibir un comando BLE. </p>
+<p>Interpreta los comandos:</p><ul>
+<li>'A': avanzar o mantener velocidad</li>
+<li>'F': frenar progresivamente Se enciende un LED para para control e indicar actividad. </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00070">70</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8h_source.html#l00038">ADC_SINGLE</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_recuperatorio_8c_source.html#l00050">ECHO_GPIO</a>, <a class="el" href="_recuperatorio_8c_source.html#l00047">ELECTROVALVULA</a>, <a class="el" href="gpio__mcu_8h_source.html#l00043">GPIO_INPUT</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="hc__sr04_8c_source.html#l00034">HcSr04Init()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00048">MOTOR_COMIDA</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_recuperatorio_8c_source.html#l00051">TECLA_AGUA</a>, <a class="el" href="_recuperatorio_8c_source.html#l00052">TECLA_COMIDA</a>, <a class="el" href="_recuperatorio_8c_source.html#l00049">TRIG_GPIO</a>, <a class="el" href="_recuperatorio_8c_source.html#l00053">UART_CONSOLA</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a5e228da1da7e206fcb40acaf5f548ad9" name="a5e228da1da7e206fcb40acaf5f548ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e228da1da7e206fcb40acaf5f548ad9">&#9670;&#160;</a></span>TareaAgua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TareaAgua </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que controla el suministro de agua. Utiliza el sensor HC-SR04 para medir la distancia y calcular el volumen de agua Si la distancia es menor a 30 cm activa la electrovalvula para suministrar agua. Si la distancia es mayor o igual a 25 cm desactiva la electrovalvula. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00135">135</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_recuperatorio_8c_source.html#l00059">agua_ml</a>, <a class="el" href="_recuperatorio_8c_source.html#l00047">ELECTROVALVULA</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a> y <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a02888458efc488c4b537a6d5fba24691" name="a02888458efc488c4b537a6d5fba24691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02888458efc488c4b537a6d5fba24691">&#9670;&#160;</a></span>TareaComida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TareaComida </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que controla el suministro de coimida. Usa un ADC para leer el valor de la balanza analógica Calcula el peso de la comida en gramos y activa/desactiva el motor de comida Si el peso es menor a 25g activa el motor de comida Si el peso es mayor o igual a 250g desactiva el motor de comida. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00161">161</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00130">AnalogInputReadSingle()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_recuperatorio_8c_source.html#l00060">comida_g</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00048">MOTOR_COMIDA</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a1865ce9d96db5969d78a3c992fde97e9" name="a1865ce9d96db5969d78a3c992fde97e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1865ce9d96db5969d78a3c992fde97e9">&#9670;&#160;</a></span>TareaInforme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TareaInforme </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que envía informes periódicos por UART. Envía cada 10 segundos un mensaje con la cantidad de comida y agua disponible. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00208">208</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_recuperatorio_8c_source.html#l00059">agua_ml</a>, <a class="el" href="_recuperatorio_8c_source.html#l00060">comida_g</a>, <a class="el" href="_recuperatorio_8c_source.html#l00053">UART_CONSOLA</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a11931433664b3fdcb82f694fab669630" name="a11931433664b3fdcb82f694fab669630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11931433664b3fdcb82f694fab669630">&#9670;&#160;</a></span>TareaTeclas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TareaTeclas </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>tarea que monitorea las teclas de agua y comida. Detecta el estado de las teclas y activa/desactiva el suministro de agua y comida. y envía mensajes por UART al usuario. utilizo las banderas de control agua_habilitada y comida_habilitada </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00101">101</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8c_source.html#l00101">GPIORead()</a>, <a class="el" href="_recuperatorio_8c_source.html#l00051">TECLA_AGUA</a>, <a class="el" href="_recuperatorio_8c_source.html#l00052">TECLA_COMIDA</a>, <a class="el" href="_recuperatorio_8c_source.html#l00053">UART_CONSOLA</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="af1ec7a0e6a63b968952924be51018713" name="af1ec7a0e6a63b968952924be51018713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ec7a0e6a63b968952924be51018713">&#9670;&#160;</a></span>TareaUART()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TareaUART </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que maneja los comandos recibidos por UART. Permite activar/desactivar el suministro de agua y comida mediante los comandos w y f. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00187">187</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_recuperatorio_8c_source.html#l00053">UART_CONSOLA</a>, <a class="el" href="uart__mcu_8c_source.html#l00142">UartReadByte()</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00217">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="addef71ac804abb8dd4d55183a711f442" name="addef71ac804abb8dd4d55183a711f442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addef71ac804abb8dd4d55183a711f442">&#9670;&#160;</a></span>agua_ml</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float agua_ml = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00059">59</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00135">TareaAgua()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00208">TareaInforme()</a>.</p>
+
+</div>
+</div>
+<a id="a48ab154cd74e54007ff2a13d4dda883c" name="a48ab154cd74e54007ff2a13d4dda883c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ab154cd74e54007ff2a13d4dda883c">&#9670;&#160;</a></span>comida_g</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float comida_g = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_recuperatorio_8c_source.html#l00060">60</a> del archivo <a class="el" href="_recuperatorio_8c_source.html">Recuperatorio.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_recuperatorio_8c_source.html#l00161">TareaComida()</a> y <a class="el" href="_recuperatorio_8c_source.html#l00208">TareaInforme()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_1e2167199c30f33b07873bbcbfad901c.html">Recuperatorio</a></li><li class="navelem"><a class="el" href="dir_c6c7b58283b9a2f6f9cfab379b882fcb.html">main</a></li><li class="navelem"><a class="el" href="_recuperatorio_8c.html">Recuperatorio.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
