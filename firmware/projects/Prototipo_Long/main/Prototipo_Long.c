@@ -83,6 +83,7 @@ static int64_t last_touch_time = 0;
  * Interpreta los comandos:
  * - 'A': avanzar o mantener velocidad
  * - 'F': frenar progresivamente
+ *  Se enciende un LED para para control e indicar actividad.
  */
 void read_data(uint8_t *data, uint8_t length)
 {
@@ -114,6 +115,8 @@ void read_data(uint8_t *data, uint8_t length)
  * @brief ISR del sensor óptico.
  * 
  * Se activa en flanco descendente y mide el tiempo entre ranuras.
+ * Actualiza la variable `pulse_interval_us` con el intervalo en microsegundos
+ * Lo que permite calcular la velocidad del longboard.
  */
 void IRAM_ATTR sensor_isr(void *arg) {
     uint32_t now = TimerRead(TIMER_A);
@@ -187,6 +190,7 @@ void frenar(void) {
 
 /**
  * @brief Tarea que ejecuta los comandos BLE sobre el motor.
+ * Se enciende un LED para para control e indicar actividad.
  */
 void tarea_comandos(void *param) {
     while (1) {
