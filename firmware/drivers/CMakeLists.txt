@@ -36,4 +36,13 @@ set(includes "microcontroller/inc"
 
 idf_component_register(SRCS ${srcs}
                        INCLUDE_DIRS ${includes}
-                       REQUIRES driver esp_adc nvs_flash bt)
+                       PRIV_REQUIRES esp_driver_gpio 
+                       esp_driver_uart 
+                       esp_driver_gptimer 
+                       esp_driver_ledc # uncomment for PWM support
+                    #    esp_driver_i2c  # uncomment for I2C support
+                    #    esp_driver_spi  # uncomment for SPI support
+                       esp_driver_sdm  # uncomment for DAC support
+                       esp_adc         # uncomment for ADC support
+                       nvs_flash bt    # uncomment for BLE support
+                       )
